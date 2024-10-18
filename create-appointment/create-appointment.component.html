@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa; /* Light background color for the body */
+        }
+
+        .form-container {
+            background-color: #ffffff; /* White background for the form */
+            border-radius: 10px; /* Rounded corners */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+            padding: 30px; /* Padding inside the form */
+            max-width: 600px; /* Maximum width of the form */
+            margin: auto; /* Center the form horizontally */
+        }
+
+        h2 {
+            color: #007bff; /* Primary color for headings */
+        }
+
+        .btn-primary {
+            background-color: #007bff; /* Customize primary button color */
+            border: none; /* Remove default border */
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3; /* Darker shade on hover */
+        }
+    </style>
+</head>
+<body>
+
+<div class="container mt-5">
+    <div class="form-container">
+        <h2 class="text-center mb-4">Add New Appointment</h2>
+
+        <form (ngSubmit)="onSubmit()">
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="id" class="form-label">Appointment ID</label>
+                    <input type="number" id="id" class="form-control" name="id" placeholder="Enter appointment ID" [(ngModel)]="appointment.id" required />
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" id="name" class="form-control" name="name" placeholder="Enter name" [(ngModel)]="appointment.name" required />
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="symptoms" class="form-label">Symptoms</label>
+                    <input type="text" id="symptoms" class="form-control" name="symptoms" placeholder="Enter symptoms" [(ngModel)]="appointment.symptoms" required />
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label for="age" class="form-label">Age</label>
+                    <input type="number" id="age" class="form-control" name="age" placeholder="Enter age" [(ngModel)]="appointment.age" required />
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label for="number" class="form-label">Contact Number</label>
+                <input type="text" id="number" class="form-control" name="number" placeholder="Enter contact number" [(ngModel)]="appointment.number" required />
+            </div>
+
+            <button type="submit" class="btn btn-primary w-100 mt-3">Add Appointment</button>
+        </form>
+    </div>
+</div>
+
+<!-- Include Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

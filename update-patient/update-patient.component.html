@@ -1,0 +1,113 @@
+<nav style="margin: auto" class="navbar navbar-expand-lg bg-dark">
+    <a style="color: white;" class="navbar-brand" href="#">SIDDHINATH HOSPITALS</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" 
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+                <a style="color: white;" class="nav-link active" aria-current="page" href="javascript:void(0);" routerLink="/patient-list">
+                    Back
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Patient</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="container mt-5">
+        <h2 class="text-center mb-4">Update Patient Details</h2>
+        <div class="card shadow-sm mx-auto" style="max-width: 800px;">
+            <div class="card-body">
+                <form (ngSubmit)="onUpdate()">
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="name" class="form-label">Name</label>
+                                <input type="text" id="name" name="name" placeholder="Enter patient's name" class="form-control" [(ngModel)]="patient.name" required />
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="age" class="form-label">Age</label>
+                                <input type="number" id="age" name="age" placeholder="Enter patient's age" class="form-control" [(ngModel)]="patient.age" required />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="blood" class="form-label">Blood Group</label>
+                                <input type="text" id="blood" name="blood" placeholder="Enter blood group" class="form-control" [(ngModel)]="patient.blood" required />
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="dose" class="form-label">Dose</label>
+                                <input type="text" id="dose" name="dose" placeholder="Enter dose details" class="form-control" [(ngModel)]="patient.dose" required />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="urgency" class="form-label">Urgency</label>
+                                <input type="text" id="urgency" name="urgency" placeholder="Enter urgency level" class="form-control" [(ngModel)]="patient.urgency" required />
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="fees" class="form-label">Fees</label>
+                                <input type="text" id="fees" name="fees" placeholder="Enter fee details" class="form-control" [(ngModel)]="patient.fees" required />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <div class="form-group">
+                            <label for="prescription" class="form-label">Prescription</label>
+                            <textarea id="prescription" name="prescription" placeholder="Enter prescription details" class="form-control" rows="4" [(ngModel)]="patient.prescription" required></textarea>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary btn-lg">Update</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+<style>
+    .form-label {
+        font-weight: bold;
+        color: #495057;
+    }
+    .form-control {
+        border-radius: 0.25rem;
+    }
+    .card {
+        border-radius: 0.5rem;
+    }
+    .btn-primary {
+        background-color: #007BFF;
+        border-color: #007BFF;
+        border-radius: 0.25rem;
+    }
+    .btn-primary:hover {
+        background-color: #0056b3;
+        border-color: #0056b3;
+    }
+</style>
